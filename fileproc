@@ -59,6 +59,12 @@ def gen_from_template(template: str, rows: list, gen_file_name: str = None):
 	"row: ('2021年3月26日', '20210001', '党委1', 'xx同志批示清样（在xx上的批示）') "
 	for r in rows:
 		if r[1] is None:
+			print("invalid row: ", r)
+			continue
+		try:
+			title = int(r[1])
+		except:
+			print("invalid row: ", r)
 			continue
 		new_ws= wb.copy_worksheet(ws)
 		new_ws.title = r[1]
@@ -75,6 +81,8 @@ def gen_from_template(template: str, rows: list, gen_file_name: str = None):
 	else:
 		write_to = template
 	wb.remove_sheet(ws)
+	if wb.active is None:
+		return
 	wb.save(write_to)
 
 	return None
