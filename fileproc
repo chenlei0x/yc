@@ -90,7 +90,7 @@ def usage():
 	help_str="""
 命令格式：./fileproc [ROW_NUMBER]
 
-ROW_NUMBER(N>=2):
+ROW_NUMBER(N>=3):
 	N: row N
 	N-M: row N to M(included)
 	N-: row N to the end
