@@ -151,5 +151,5 @@ if __name__ == "__main__":
 		valid_rows = get_valid_rows(source, row_num_list)
 	else:
 		valid_rows = get_valid_rows(source)
-	print("valid rows:", '\n', valid_rows)
+	#print("valid rows:", '\n', valid_rows)
 	gen_from_template(template, valid_rows, target_file)
