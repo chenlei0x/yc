@@ -58,6 +58,8 @@ def gen_from_template(template: str, rows: list, gen_file_name: str = None):
 	print(template, rows)
 	"row: ('2021年3月26日', '20210001', '党委1', 'xx同志批示清样（在xx上的批示）') "
 	for r in rows:
+		if r[1] is None:
+			continue
 		new_ws= wb.copy_worksheet(ws)
 		new_ws.title = r[1]
 
