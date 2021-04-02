@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 #-*- coding: utf-8 -*-
 
-from openpyxl import Workbook, load_workbook
 import sys
+
+sys.path.append("./whl")
+from openpyxl import Workbook, load_workbook
 
 source = "收文登记表.xlsx"
 template = "文件处理单（模板）.xlsx"
